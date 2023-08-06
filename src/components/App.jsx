@@ -1,3 +1,11 @@
+import { Profile } from './Profile-components/profile';
+
+import userData from '../data/user.json';
+
 export const App = () => {
-  return <h2>React home work</h2>;
+  return (
+    <>
+      <Profile users={userData} />
+    </>
+  );
 };
