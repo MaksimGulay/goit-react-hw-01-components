@@ -4,6 +4,7 @@ import {
   StatsList,
   StatsLabel,
 } from './statistics.style';
+import PropTypes from 'prop-types';
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
@@ -25,4 +26,15 @@ export const Statistics = ({ stats, title }) => {
       </StatsList>
     </StatsSection>
   );
+};
+
+Statistics.propTypes = {
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+  title: PropTypes.string,
 };
